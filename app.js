@@ -1,0 +1,20 @@
+const express = require('express');
+const dotenv = require('dotenv');
+const db = require('./models');
+const routes = require('./routes');
+
+dotenv.config();
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+app.use(express.json());
+app.use('/api', routes);
+
+db.sequelize.sync().then(() => {
+  app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+  });
+}).catch(err => {
+  console.error('Unable to connect to the database:', err);
+});
+

@@ -1,0 +1,74 @@
+node.js API - WEB 2B - 3P
+
+# Music API
+
+## Descrição
+
+Esta é uma API RESTful para gerenciar músicas e artistas.
+ Ela permite realizar operações CRUD (Create, Read, Update, Delete) 
+ em duas entidades principais: `Artist` e `Song`. O projeto foi 
+ desenvolvido utilizando Node.js, Express, Sequelize, dotenv e MySQL.
+
+## Uso da API
+A API possui os seguintes endpoints 
+para gerenciar artistas e músicas:
+
+Artistas
+Listar todos os artistas
+
+GET /api/artists
+Criar um novo artista
+
+POST /api/artists
+Body: {
+  "name": "Nome do Artista"
+}
+
+---
+ 
+ Obter um artista pelo ID
+
+GET /api/artists/:id
+Atualizar um artista pelo ID
+
+PUT /api/artists/:id
+Body: {
+  "name": "Novo Nome do Artista"
+}
+
+--- 
+
+Deletar um artista pelo ID
+
+DELETE /api/artists/:id
+Músicas
+Listar todas as músicas
+
+GET /api/songs
+Criar uma nova música
+
+POST /api/songs
+Body: {
+  "title": "Título da Música",
+  "artistId": 1
+}
+
+--- 
+
+Obter uma música pelo ID
+
+GET /api/songs/:id
+Atualizar uma música pelo ID
+
+PUT /api/songs/:id
+Body: {
+  "title": "Novo Título da Música",
+  "artistId": 1
+}
+
+---
+
+Deletar uma música pelo ID
+
+DELETE /api/songs/:id 
+
